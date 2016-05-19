@@ -1,23 +1,45 @@
 'use strict';
-
-
-
+//alert("before fun")
 function fibonacci_series(n) 
 {
-	var fiblist = [];
+	var list = [0, 1, 1];
+	var i = 0;
+	var fib = [];
+	if(n == 0)
+	{
+		fib = [0];
+		//alert("fib:" + fib);
+		return fib;
+	}
 
-	fiblist[0] = 0;
-	fiblist[1] = 1;
-	fiblist[2] = 1;
-	if(n <= 2)
-	{ 
-		return;
-    }
+	else if(n == 1)
+	{
+		fib = [0 ,1];
+		//alert("fib:" + fib);
+		return fib;
+	}
 
-	 fibonacci_series(n-1);
+	else if(n == 2)
+	{
+		fib = [0, 1, 1];
+		//alert("fib:" + fib);
+		return fib;
+	}
+
+	else
+	{
+		for(i = 3; i < n + 1; ++i)
+		{
+			list.push(list[i - 1] + list[i - 2]);
+		}
+
+		//alert("list:" + list);
+		return list;
+	}
 	
-	 fiblist.push((fiblist[n-2]+fiblist[n-3]));
-	return fiblist;
 }
+//alert("after func");
+//var n = 1;
+//fibonacci_series(n);
 
 module.exports = fibonacci_series;
