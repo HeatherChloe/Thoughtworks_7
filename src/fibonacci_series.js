@@ -1,7 +1,7 @@
 'use strict';
 
 var fiblist = [];
-//var fib_arr = [];
+
 	fiblist[0] = 0;
 	fiblist[1] = 1;
 
@@ -17,7 +17,7 @@ function fibonacci_series(n)
 	fibonacci_series(n-1);
 	
 	fiblist.push((fiblist[n-2]+fiblist[n-3]));
-
+	return fiblist;
 }
 
 //n = 5;
